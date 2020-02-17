@@ -19,16 +19,14 @@ $modversion['hasMain'] = 1;
 $modversion['sqlfile']['mysql'] = "sql/mysql.sql";
 //學生名單
 $modversion['tables'][1] = "secondRetry_student";
-//對照1
+//語言對照表
 $modversion['tables'][2] = "secondRetry_check1";
-//對照2
+//非語言對照表
 $modversion['tables'][3] = "secondRetry_check2";
-//對照3
+//全測驗對照表
 $modversion['tables'][4] = "secondRetry_check3";
-//總分對照
-$modversion['tables'][5] = "secondRetry_check4";
 //學生成績
-$modversion['tables'][6] = "secondRetry_grade";
+$modversion['tables'][5] = "secondRetry_grade";
 
 
 

@@ -1,5 +1,6 @@
 CREATE TABLE `secondRetry_student` (
   `sn` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '索引',
+  `no` int(10) UNSIGNED NOT NULL COMMENT '序號',
   `id` varchar(255) NOT NULL COMMENT '考生編號',
   `name` varchar(255) NOT NULL COMMENT '考生姓名',
   `sex` varchar(255) NOT NULL COMMENT '考生性別',
@@ -10,25 +11,25 @@ CREATE TABLE `secondRetry_student` (
 
 CREATE TABLE `secondRetry_check1` (
   `sn` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '索引',
-  `right_num1` smallint(5) UNSIGNED NOT NULL COMMENT '答對題數',
-  `T1` smallint(5) UNSIGNED NOT NULL COMMENT 'T分數',
-  `PR1` smallint(5) UNSIGNED NOT NULL COMMENT 'PR值',
+  `right_num1` smallint(5) UNSIGNED NOT NULL COMMENT '語言總分',
+  `T1` smallint(5) UNSIGNED NOT NULL COMMENT '智商',
+  `PR1` smallint(5) UNSIGNED NOT NULL COMMENT '百分等級',
   PRIMARY KEY (`sn`)
 ) ENGINE=MyISAM;
 
 CREATE TABLE `secondRetry_check2` (
   `sn` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '索引',
-  `right_num2` smallint(5) UNSIGNED NOT NULL COMMENT '答對題數',
-  `T2` smallint(5) UNSIGNED NOT NULL COMMENT 'T分數',
-  `PR2` smallint(5) UNSIGNED NOT NULL COMMENT 'PR值',
+  `right_num2` smallint(5) UNSIGNED NOT NULL COMMENT '非語言總分',
+  `T2` smallint(5) UNSIGNED NOT NULL COMMENT '智商',
+  `PR2` smallint(5) UNSIGNED NOT NULL COMMENT '百分等級',
   PRIMARY KEY (`sn`)
 ) ENGINE=MyISAM;
 
 CREATE TABLE `secondRetry_check3` (
   `sn` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '索引',
-  `right_num3` smallint(5) UNSIGNED NOT NULL COMMENT '答對題數',
-  `T3` smallint(5) UNSIGNED NOT NULL COMMENT 'T分數',
-  `PR3` smallint(5) UNSIGNED NOT NULL COMMENT 'PR值',
+  `right_num3` smallint(5) UNSIGNED NOT NULL COMMENT '全總分',
+  `T3` smallint(5) UNSIGNED NOT NULL COMMENT '智商',
+  `PR3` smallint(5) UNSIGNED NOT NULL COMMENT '百分等級',
   PRIMARY KEY (`sn`)
 ) ENGINE=MyISAM;
 
@@ -53,9 +54,18 @@ CREATE TABLE `secondRetry_grade` (
   `s7` smallint(5) UNSIGNED NOT NULL COMMENT '標準分數7',
   `o8` smallint(5) UNSIGNED NOT NULL COMMENT '原始分數8',
   `s8` smallint(5) UNSIGNED NOT NULL COMMENT '標準分數8',
-  `sL` smallint(5) UNSIGNED NOT NULL COMMENT '語言標準分數',
-  `snonL` smallint(5) UNSIGNED NOT NULL COMMENT '非語言標準分數',
-  `sall` smallint(5) UNSIGNED NOT NULL COMMENT '標準分數合計',
+  `st1` smallint(5) UNSIGNED NOT NULL COMMENT '標準分數-語言',
+  `st2` smallint(5) UNSIGNED NOT NULL COMMENT '標準分數-非語言',
+  `st3` smallint(5) UNSIGNED NOT NULL COMMENT '標準分數-全測驗',
+  `pa1` varchar(255) NOT NULL COMMENT '百分比-語言',
+  `pa2` varchar(255) NOT NULL COMMENT '百分比-非語言',
+  `pa3` varchar(255) NOT NULL COMMENT '百分比-全測驗',
+  `iq1` varchar(255) NOT NULL COMMENT '智商-語言',
+  `iq2` varchar(255) NOT NULL COMMENT '智商-非語言',
+  `iq3` varchar(255) NOT NULL COMMENT '智商-全測驗',
+  `iqRange1` varchar(255) NOT NULL COMMENT '智商區間-語言',
+  `iqRange2` varchar(255) NOT NULL COMMENT '智商區間-非語言',
+  `iqRange3` varchar(255) NOT NULL COMMENT '智商區間-全測驗',
   `note` varchar(255) NOT NULL COMMENT '缺考',
   PRIMARY KEY (`sn`)
 ) ENGINE=MyISAM;

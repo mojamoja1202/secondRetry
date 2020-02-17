@@ -24,22 +24,21 @@ include "../../header.php";
 
 //-----函數區-----
 
-//選擇要輸入的試場
+//選擇要輸入的鑑定證編號
 
 function choseForm(){
 	$form="<form method='post' action='index.php?op=showList'>";
 	$form.="<table align='center'>";
-	$form.="<tr><td>輸入第<input type='text' name='place' size='1'>試場成績<Input Type='Reset' Value='清除'><Input Type='Submit' Value='傳送'></td></tr>";
+	$form.="<tr><td>輸入鑑定證號<input type='text' name='id' size='8'><Input Type='Reset' Value='清除'><Input Type='Submit' Value='傳送'></td></tr>";
 	$form.="</table>";
 	$form.="</form>";
 	return $form;
 }
 
-//秀出考場的學生
-function showList($place){
+//秀出要輸入成績的學生
+function showList($id){
 	global $xoopsDB;
 	//不知道是哪來的bug，只能這樣解決…很怪，可能得要請教高手才可以了
-	$p=$place;
 	$sql="select * from `" . $xoopsDB->prefix('second_grade') . "` where `place`=$p order by id";
 	$result=$xoopsDB->query($sql);
 	//貼上表格的java和style
